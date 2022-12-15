@@ -1,14 +1,13 @@
 export default class Service {
 
-
-    static async getData() {
-        let url = `/getdata`;
+     static async getData(url) {
         let data = {};
-        await fetch(url)
-          .then((d) => d.json())
-          .then((d) => console.log("respuesta: ", d))
+        let HOST = 'http://localhost:8080';   
+        console.log("ruta ", HOST+url)
+        await fetch(HOST+url)
+          .then( d => d.json())
+          .then( d => console.log(d))
           .catch((err) => console.log("error from service: ", err))
-          console.log(data);
         return data;
       }
 

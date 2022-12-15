@@ -2,7 +2,13 @@
     "Access-Control-Allow-Origin": [
         "http://localhost:3000"
     ],
+    "proxy": [
+        "http://localhost:3000"
+    ],
     "dependencies": {
         "cors": "^2.8.5"
+    },
+    "scripts" : {
+        "start" : "node index.js"
     }
 }
