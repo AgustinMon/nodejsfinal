@@ -1,5 +1,6 @@
 import './App.css';
 import Carrito from "./Components/Carrito";
+import { Formulario } from './Components/Formulario';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <h1>Entrega final</h1>
         <h3>Anadir al carrito</h3>
         <Carrito></Carrito>
+        <Formulario></Formulario>
       </main>
     </div>
   );

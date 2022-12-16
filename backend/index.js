@@ -16,8 +16,16 @@ app.use((req, res, next) => {
 });
 
 app.get("/getdata", (req, res) => {
-    res.json("Hello");
+    res.json({saludo : "Hello"});
 });
+
+app.get("/mysql", (req, res) => {
+    res.json({saludo : "Hello from db"});
+});
+
+app.post("/formulario", (req, res) => {
+    console.log("data from formulario ", req.nombre);
+})
 
 app.listen(8080, console.log("servidor running at port 8080"));
 
