@@ -12,7 +12,7 @@ export const Formulario = (props) => {
   };
 
   const sendData = () => {
-    let datos = { n : this.nombre};
+    let datos = { nombre : n};
     // el envio no se hace desde la vista
     Service.postData(datos);
   }
@@ -21,7 +21,7 @@ export const Formulario = (props) => {
   return (
     <>
       <form id="formulario" method="POST" onSubmit={parseForm}>
-        <input type="text" id="nombre" value={n} onChange={ setNombre( (e) => e.target.value)}/>
+        <input type="text" id="nombre" value={n} onChange={(e)=>setNombre(e.target.value)}/>
         <input type="submit" id="boton" value="enviar" />
       </form>
     </>

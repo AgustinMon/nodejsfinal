@@ -12,12 +12,17 @@ export default class Service {
       }
 
       static async postData(data) {
-        let HOST = 'http://localhost:8080';  
+        let HOST = 'http://localhost:8080';
         await fetch(HOST+"/formulario", {
-          method : "POST"
+          method : "POST",
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(data)
         })
-        .then(console.log("data enviada"))
-        .catch(console.log("error de formulario"))
+        .then((result)=> result.json())
+        .then((d) => console.log("respuesta", d))
+        .catch((err)=>console.log("error de formulario", err))
       }
 
 }
